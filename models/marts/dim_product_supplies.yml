@@ -27,7 +27,7 @@ models:
         data_type: string
 
       - name: product_price
-        data_type: float64
+        data_type: numeric(38, 9)
         constraints:
           - type: not_null
 
@@ -35,7 +35,7 @@ models:
         data_type: boolean
 
       - name: supply_cost
-        data_type: float64
+        data_type: numeric(38, 9)
 
       - name: is_drink_item
         data_type: boolean
