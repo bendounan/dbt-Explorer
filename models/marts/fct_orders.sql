@@ -14,9 +14,9 @@ final as (
         location_name,
         tax_rate,
         location_opened_at,
-        extract(month, ordered_at) as ordered_month,
-        extract(day, ordered_at) as ordered_day, 
-        extract(year, ordered_at) as ordered_year
+        extract(month from ordered_at) as ordered_month,
+        extract(day from ordered_at) as ordered_day, 
+        extract(year from ordered_at) as ordered_year
     from orders
 )
 
