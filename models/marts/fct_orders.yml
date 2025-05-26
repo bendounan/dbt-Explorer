@@ -8,53 +8,55 @@ models:
         enforced: true
     columns:
       - name: order_id
-        data_type: varchar
+        data_type: string
         constraints:
           - type: not_null
       - name: location_id
-        data_type: varchar
+        data_type: string
         constraints:
           - type: not_null
       - name: customer_id
-        data_type: varchar
+        data_type: string
       - name: order_total
-        data_type: number
+        data_type: float64
       - name: tax_paid
-        data_type: number
+        data_type: float64
       - name: ordered_at
-        data_type: timestamp_ntz
+        data_type: timestamp
       - name: customer_name
-        data_type: varchar
+        data_type: string
       - name: location_name
-        data_type: varchar
+        data_type: string
         tests:
           - accepted_values:
               values:
                 - "Brooklyn"
                 - "Philadelphia"
       - name: tax_rate
-        data_type: number
+        data_type: float64
       - name: location_opened_at
-        data_type: timestamp_ntz
+        data_type: timestamp
       - name: ordered_month
-        data_type: number
+        data_type: int64
       - name: ordered_day
-        data_type: number
+        data_type: int64
       - name: ordered_year
-        data_type: number
-    versions:                     
+        data_type: int64
+
+    versions:
       - v: 1
-          ##Matches above! Nothing more needed
         config:
-            alias: fct_orders
+          alias: fct_orders
+
       - v: 2
         columns:
-          - name: order_amount      ##v2 Adds in new column name and date type change
-            data_type: number
+          - name: order_amount
+            data_type: float64
           - name: location_opened_at
             data_type: date
-          - include: all            ##Includes all other fields
-            exclude: [order_total]   ##But removes the old name of order_total
+          - include: all
+            exclude: [order_total]
+
 exposures:
   - name: weekly_jaffle_metrics
     label: Jaffles by the Week
@@ -70,4 +72,3 @@ exposures:
     owner:
       name: Michelle McData
       email: data@jaffleshop.com
-    
