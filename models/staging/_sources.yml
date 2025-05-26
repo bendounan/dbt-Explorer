@@ -1,6 +1,6 @@
 sources:
   - name: jaffle_shop
-    database: raw
+    database: jovial-pod-460921-r0 
     schema: jaffle_shop
     description: E-commerce data
     tables:
