@@ -18,3 +18,5 @@ clean-targets:
 
 models:
   +warn_on_unsupported: false
+  explorer_platform:  # <-- ajoute ce bloc
+    +schema: analytics
