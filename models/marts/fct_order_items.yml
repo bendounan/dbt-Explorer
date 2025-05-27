@@ -25,7 +25,7 @@ models:
       - name: tax_paid
         data_type: float64 
       - name: ordered_at
-        data_type: float64
+        data_type: TIMESTAMP
       - name: customer_name
         data_type: string
       - name: location_name
@@ -36,6 +36,6 @@ models:
                 - "Brooklyn"
                 - "Philadelphia"
       - name: tax_rate
-        data_type: numeric 
+        data_type: FLOAT64       
       - name: location_opened_at
         data_type: timestamp
